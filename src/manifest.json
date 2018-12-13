@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+
+  "author": "Dario Velez Roman",
+  "name": "WikiSearch",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["./content_scripts/main.js"]
+    }
+  ]
+}
