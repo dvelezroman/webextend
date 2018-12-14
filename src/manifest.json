@@ -2,12 +2,32 @@
   "manifest_version": 2,
 
   "author": "Dario Velez Roman",
-  "name": "WikiSearch",
+  "name": "VeoVeo",
+  "description": "Brinda una mejor accesibilidad a las imágenes de una página web, utilizando Microsoft Cognitive Services Computer Vision API, para analizarlas por ti.",
   "version": "1.0",
+  "icons": {
+    "48": "public/coffe_beans.jpg"
+  },
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
-      "js": ["./content_scripts/main.js"]
+      "matches": ["<all_urls>"],
+      "js": ["content_scripts/main.js"],
+      "run_at": "document_start"
     }
-  ]
+  ],
+  "browser_action": {
+    "default_icon": {
+      "64": "public/logo.png"
+    },
+    "default_title": "Veo Veo",
+    "default_popup": "browser_actions/dashboard.html"
+  },
+  "background": {
+    "scripts": [
+      "background_scripts/main.js",
+      "background_scripts/ClassName.js"
+    ],
+    "persistent": false
+  },
+  "permissions": ["activeTab"]
 }
